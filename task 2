@@ -1,0 +1,59 @@
+import os
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score, classification_report
+
+# Step 1: Data Preparation
+def load_data(folder):
+    emails = []
+    labels = []
+    for filename in os.listdir(folder):
+        if filename.endswith(".txt"):
+            with open(os.path.join(folder, filename), 'r', encoding='latin1') as file:
+                emails.append(file.read())
+                # Label 1 for spam, 0 for non-spam
+                labels.append(1 if "spmsg" in filename else 0)
+    return emails, labels
+
+emails, labels = load_data('data')  # Replace 'data' with your folder path containing emails
+
+# Step 2: Text Preprocessing (Simple example, can be extended)
+def preprocess_text(text):
+    # Example: Convert to lower case and remove punctuation
+    processed_text = text.lower()
+    processed_text = processed_text.replace('.', ' ')
+    processed_text = processed_text.replace(',', ' ')
+    return processed_text
+
+# Preprocess all emails
+processed_emails = [preprocess_text(email) for email in emails]
+
+# Step 3: Feature Extraction (Bag-of-Words)
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(processed_emails)
+y = np.array(labels)
+
+# Step 4: Model Training (Naive Bayes)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+nb_classifier = MultinomialNB()
+nb_classifier.fit(X_train, y_train)
+
+# Step 5: Model Evaluation
+y_pred = nb_classifier.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+
+# Step 6: Prediction
+new_email = ["Hey, this is a great offer for you! Click here to claim your prize!"]
+new_email_transformed = vectorizer.transform(new_email)
+prediction = nb_classifier.predict(new_email_transformed)
+if prediction[0] == 1:
+    print("Predicted: Spam")
+else:
+    print("Predicted: Not Spam")
+
+# Additional: Classification Report
+print("\nClassification Report:")
+print(classification_report(y_test, y_pred, target_names=['Not Spam', 'Spam']))
