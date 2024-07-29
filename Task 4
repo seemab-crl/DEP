@@ -1,0 +1,98 @@
+import logging
+from transformers import pipeline
+import matplotlib.pyplot as plt
+
+# Setup logging configuration
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Create a sentiment analysis pipeline using a pre-trained model
+logging.info("Initializing the sentiment analysis pipeline...")
+sentiment_pipeline = pipeline("sentiment-analysis")
+
+def analyze_sentiment(text):
+    """
+    Analyzes the sentiment of the provided text using a pre-trained model.
+    
+    Args:
+        text (str): The text for sentiment analysis.
+        
+    Returns:
+        dict: A dictionary with 'label' (sentiment label) and 'score' (confidence score).
+    """
+    try:
+        logging.info("Analyzing sentiment for the provided text...")
+        result = sentiment_pipeline(text)
+        return result[0]  # Extract the first result
+    except Exception as e:
+        logging.error(f"Error during sentiment analysis: {e}")
+        return {'label': 'ERROR', 'score': 0.0}
+
+def process_texts(texts):
+    """
+    Processes a list of texts and performs sentiment analysis on each.
+    
+    Args:
+        texts (list of str): A list of texts to analyze.
+        
+    Returns:
+        list of dict: A list of sentiment analysis results.
+    """
+    results = []
+    for text in texts:
+        logging.info(f"Processing text: {text}")
+        sentiment = analyze_sentiment(text)
+        results.append(sentiment)
+    return results
+
+def visualize_results(results):
+    """
+    Visualizes the sentiment analysis results using a bar chart.
+    
+    Args:
+        results (list of dict): A list of sentiment analysis results.
+    """
+    labels = [result['label'] for result in results]
+    scores = [result['score'] for result in results]
+
+    plt.figure(figsize=(10, 6))
+    plt.bar(labels, scores, color=['green' if label == 'POSITIVE' else 'red' for label in labels])
+    plt.xlabel('Sentiment')
+    plt.ylabel('Confidence Score')
+    plt.title('Sentiment Analysis Results')
+    plt.show()
+
+def main():
+    """
+    Main function to handle user input, process texts, and visualize results.
+    """
+    logging.info("Welcome to the Sentiment Analysis Tool!")
+
+    # Collect multiple texts from the user
+    texts = []
+    while True:
+        text = input("Enter a social media post or product review (or type 'done' to finish): ")
+        if text.lower() == 'done':
+            break
+        texts.append(text)
+    
+    if not texts:
+        logging.warning("No texts were entered. Exiting...")
+        return
+
+    # Process the entered texts
+    logging.info(f"Analyzing {len(texts)} texts...")
+    results = process_texts(texts)
+
+    # Display the results
+    print("\nSentiment Analysis Results:")
+    for i, result in enumerate(results):
+        print(f"Text {i+1}:")
+        print(f"  Sentiment: {result['label']}")
+        print(f"  Score: {result['score']:.2f}")
+        print()
+
+    # Visualize the results
+    visualize_results(results)
+
+if __name__ == "__main__":
+    main()
