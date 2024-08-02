@@ -1,0 +1,69 @@
+
+tweet,sentiment,date
+"I love the new features of this app! #love #features",positive,2023-07-01
+"This service is terrible, I'm very disappointed. #terrible #disappointed",negative,2023-07-02
+"Just an average experience, nothing special #average #nothing-special",neutral,2023-07-03
+"Best customer service ever! #best #customer-service",positive,2023-07-04
+"Had a bad experience with the product quality #premium #bad-quality",negative,2023-07-05
+"Quite happy with the prompt response from support #support #happy",positive,2023-07-06
+"The UI is very user-friendly #user-friendly and intuitive.",positive,2023-07-07
+"Not satisfied with the recent update #update #not-satisfied",negative,2023-07-08
+"This could be improved but overall not bad #bad #improvement",neutral,2023-07-09
+"Fantastic! Exceeded my expectations. #fantastic #exceeded",positive,2023-07-10
+"Poor connectivity and frequent crashes #poor #crashes",negative,2023-07-11
+"The app is very useful and easy to navigate. #useful #easy",positive,2023-07-12
+"Customer support was unhelpful and rude #rude #unhelpful",negative,2023-07-13
+"A decent app but lacks some key features. #decent #lacking",neutral,2023-07-14
+"Absolutely amazing experience so far! #amazing #experience",positive,2023-07-15
+"Terrible user experience, very buggy. #terrible #buggy",negative,2023-07-16
+"Great for what I need it for. #great #useful",positive,2023-07-17
+"Not worth the price. #not-worth #price",negative,2023-07-18
+"Works well but could use some improvements. #improvements #works-well",neutral,2023-07-19
+"Exceeded my expectations in every way! #exceeded #expectations",positive,2023-07-20
+"The worst app I have ever used. #worst #app",negative,2023-07-21
+"Just okay, nothing extraordinary. #okay #nothing-extraordinary",neutral,2023-07-22
+"Highly recommend it to everyone! #recommend #highly",positive,2023-07-23
+"Full of bugs and issues. #bugs #issues",negative,2023-07-24
+"Satisfactory but needs more features. #satisfactory #needs-features",neutral,2023-07-25
+"Impressive performance and quality. #impressive #quality",positive,2023-07-26
+"Unreliable and slow. #unreliable #slow",negative,2023-07-27
+"Decent app but not great. #decent #not-great",neutral,2023-07-28
+"Absolutely love it! #love #absolutely",positive,2023-07-29
+"Terrible experience, won't use it again. #terrible #wont-use",negative,2023-07-30
+"Good app but has room for improvement. #good #improvement",neutral,2023-07-31
+"Outstanding service and features. #outstanding #service",positive,2023-08-01
+"Extremely dissatisfied with the app. #dissatisfied #app",negative,2023-08-02
+"Quite useful but needs better support. #useful #needs-support",neutral,2023-08-03
+"Amazing functionality and design. #amazing #design",positive,2023-08-04
+"Horrible app, very disappointing. #horrible #disappointing",negative,2023-08-05
+"Fairly good, but could be better. #good #could-be-better",neutral,2023-08-06
+"Excellent app, highly recommended. #excellent #recommended",positive,2023-08-07
+"App crashes frequently, very frustrating. #crashes #frustrating",negative,2023-08-08
+"Not bad, but needs some updates. #not-bad #updates",neutral,2023-08-09
+"Very pleased with this app. #pleased #app",positive,2023-08-10
+"Would not recommend, very poor. #would-not-recommend #poor",negative,2023-08-11
+"Overall, a decent app. #decent #overall",neutral,2023-08-12
+"Fantastic support team, always helpful #support #help",positive,2023-08-13
+"App is slow to load and often freezes #slow #freezes",negative,2023-08-14
+"Neutral experience, nothing to write home about #neutral #average",neutral,2023-08-15
+"Love the new update, it's so smooth #update #smooth",positive,2023-08-16
+"Very unhappy with the recent changes #unhappy #changes",negative,2023-08-17
+"Good app for casual use #casual #good",neutral,2023-08-18
+"Exceptional service and features, worth every penny #worthit #premium",positive,2023-08-19
+"App is often buggy and unstable #buggy #unstable",negative,2023-08-20
+"User experience could be improved #usability #feedback",neutral,2023-08-21
+"Love everything about this app, especially the new design #design #love",positive,2023-08-22
+"Service was terrible and the app crashed constantly #service #crashed",negative,2023-08-23
+"Functional but lacks polish #functional #lacking",neutral,2023-08-24
+"Outstanding performance and very reliable #reliable #outstanding",positive,2023-08-25
+"App is unusable at times #unusable #frustrating",negative,2023-08-26
+"Okay for basic tasks, but nothing more #basic #okay",neutral,2023-08-27
+"Great user interface and features #UI #features",positive,2023-08-28
+"Terrible customer service, won't be using again #customer-service #terrible",negative,2023-08-29
+"Average app with some good features #average #features",neutral,2023-08-30
+"Impressive functionality and smooth performance #functionality #smooth",positive,2023-08-31
+"App crashes frequently, very frustrating #crashes #frustrating",negative,2023-09-01
+"Decent app for the price #decent #price",neutral,2023-09-02
+"Excellent user experience and great support #excellent #support",positive,2023-09-03
+"Not worth the cost, many issues #costly #issues",negative,2023-09-04
+"Good for occasional use but needs improvements #occasional #needs-improvement",neutral,2023-09-05
